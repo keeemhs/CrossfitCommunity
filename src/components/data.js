@@ -1,33 +1,27 @@
-import React from 'react';
 export const links = [
     {
         id: 1,
-        url: '/',
-        text: 'Home',
+        url: '/about',
+        text: 'CrossFit',
     },
     {
         id: 2,
-        url: '/about',
-        text: 'About',
-    },
-    {
-        id: 3,
         url: '/TheGirlsWODs',
         text: 'TheGirlsWODs',
     },
     {
-        id: 4,
+        id: 3,
         url: '/HeroWODs',
         text: 'HeroWODs',
     },
     {
-        id: 5,
+        id: 4,
         url: '/PersonalWODs',
         text: 'PersonalWODs',
     },
     {
-        id: 6,
-        url: '/login',
-        text: 'login',
+        id: 5,
+        url: '/mypage',
+        text: 'mypage',
     },
 ];

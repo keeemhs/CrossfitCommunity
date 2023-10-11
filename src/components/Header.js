@@ -1,6 +1,6 @@
 import React, { useState, useRef, useEffect } from 'react';
 import { FaBars } from 'react-icons/fa';
-import { links, social } from './data';
+import { links } from './data';
 import logo from './img/CrossFitLogo.svg';
 
 const Header = () => {
@@ -19,11 +19,14 @@ const Header = () => {
             linksContainerRef.current.style.height = '0px';
         }
     }, [showLinks]);
+
     return (
         <nav>
             <div className="nav-center">
                 <div className="nav-header">
-                    <img src={logo} className="logo" alt="logo" />
+                    <a href="/">
+                        <img src={logo} className="logo" alt="logo" />
+                    </a>
                     <button className="nav-toggle" onClick={toggleLinks}>
                         <FaBars />
                     </button>
