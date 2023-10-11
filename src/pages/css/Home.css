@@ -1,3 +1,60 @@
+@font-face {
+    font-family: 'KOTRAHOPE';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2110@1.0/KOTRAHOPE.woff2') format('woff2');
+    font-weight: normal;
+    font-style: normal;
+}
+
+/* Banner Section */
 .banner {
     width: 100%;
+}
+
+/* Equipment Section */
+.sec_2 {
+    margin: 50px;
+}
+.sec_2_title {
+    font-family: 'KOTRAHOPE';
+    font-size: 20px;
+    text-align: center;
+}
+.sec_2_body {
+    display: flex; /* 항목들을 가로로 나란히 표시 */
+    flex-wrap: wrap; /* 화면 크기에 따라 줄 바꿈이 일어나도록 설정 */
+    justify-content: space-around; /* 각 항목을 가로로 고르게 배치 */
+}
+.sec_2_body_specific {
+    flex: 0 0 calc(25% - 10px);
+    margin-bottom: 20px;
+    max-width: calc(25% - 10px);
+    text-align: center;
+}
+.equipment {
+    width: 200px;
+    margin: 10px;
+}
+@media (max-width: 950px) {
+    .sec_2_body_specific {
+        flex: 0 0 calc(33.33% - 10px); /* 33.33%의 너비로 설정 (3개 항목) */
+        max-width: calc(33.33% - 10px); /* 최대 너비를 33.33%로 설정 */
+    }
+}
+@media (max-width: 730px) {
+    .sec_2_body_specific {
+        flex: 0 0 calc(50% - 10px); /* 33.33%의 너비로 설정 (3개 항목) */
+        max-width: calc(50% - 10px); /* 최대 너비를 33.33%로 설정 */
+    }
+}
+@media (max-width: 570px) {
+    .sec_2 {
+        margin-left: 20px;
+        margin-right: 20px;
+    }
+}
+@media (max-width: 480px) {
+    .equipment {
+        width: 150px;
+        margin: 10px;
+    }
 }

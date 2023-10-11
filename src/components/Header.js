@@ -1,6 +1,6 @@
 import React, { useState, useRef, useEffect } from 'react';
 import { FaBars } from 'react-icons/fa';
-import { links } from './data';
+import { links } from './NavbarData';
 import logo from './img/CrossFitLogo.svg';
 
 const Header = () => {
