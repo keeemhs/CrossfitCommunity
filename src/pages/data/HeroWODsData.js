@@ -19,4 +19,14 @@ export const HeroWODsList = [
         weight: '(95/65lb)',
         createdOn: '2021-10-04',
     },
+    {
+        id: 3,
+        title: 'DORK',
+        type: 'For Time',
+        round: '6',
+        timeCap: '25',
+        activity: '60 Double-unders30 Kettlebell Swings15 Burpees',
+        weight: '(24/16kg)',
+        createdOn: '2021-10-04',
+    },
 ];
