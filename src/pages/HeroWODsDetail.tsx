@@ -19,8 +19,17 @@ const HeroWODDetail = () => {
             <div className="hero-wod-detail">
                 <h2>{heroWod.title}</h2>
                 <p className="hero-wod-info">
-                    {heroWod.type} in {heroWod.timeCap}mins
+                    {heroWod.round} Rounds {heroWod.type}
                 </p>
+                <p
+                    className="hero-wod-info"
+                    dangerouslySetInnerHTML={{
+                        __html: heroWod.activity.replace(/(\d+)/g, (match, p1, offset, string) => {
+                            return offset === 0 ? match : '<br/>' + match;
+                        }),
+                    }}
+                />
+                <p className="hero-wod-info">Time Cap : {heroWod.timeCap}mins</p>
                 <p className="hero-wod-date">Date: {dayjs(heroWod.createdOn).format('YYYY.MM.DD')}</p>
             </div>
         </section>
