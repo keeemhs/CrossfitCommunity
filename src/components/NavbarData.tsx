@@ -1,4 +1,10 @@
-export const links = [
+export interface Link {
+    id: number;
+    url: string;
+    text: string;
+}
+
+export const links: Link[] = [
     {
         id: 1,
         url: '/about',

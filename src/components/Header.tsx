@@ -1,23 +1,29 @@
 import { Link, useNavigate } from 'react-router-dom';
 import React, { useState, useRef, useEffect } from 'react';
 import { FaBars } from 'react-icons/fa';
-import { links } from './NavbarData';
+import { links, Link as LinkType } from './NavbarData'; // 이름이 겹치므로 별칭을 사용합니다.
 import logo from './img/CrossFitLogo.svg';
 
-const Header = () => {
-    // 메뉴버튼
+const Header: React.FC = () => {
     const [showLinks, setShowLinks] = useState(false);
-    const linksContainerRef = useRef(null);
-    const linksRef = useRef(null);
+    const linksContainerRef = useRef<HTMLDivElement>(null);
+    const linksRef = useRef<HTMLUListElement>(null);
+    const navigate = useNavigate();
+
     const toggleLinks = () => {
         setShowLinks(!showLinks);
     };
+
+    const handleLinkClick = () => {
+        setShowLinks(false); // 링크 클릭 시 메뉴를 닫습니다.
+    };
+
     useEffect(() => {
-        const linksHeight = linksRef.current.getBoundingClientRect().height;
+        const linksHeight = linksRef.current?.getBoundingClientRect().height || 0;
         if (showLinks) {
-            linksContainerRef.current.style.height = `${linksHeight}px`;
+            linksContainerRef.current!.style.height = `${linksHeight}px`;
         } else {
-            linksContainerRef.current.style.height = '0px';
+            linksContainerRef.current!.style.height = '0px';
         }
     }, [showLinks]);
 
@@ -25,22 +31,30 @@ const Header = () => {
         <nav>
             <div className="nav-center">
                 <div className="nav-header">
-                    <a href="/">
+                    <a
+                        href="/"
+                        onClick={(e) => {
+                            e.preventDefault();
+                            navigate('/');
+                        }}
+                    >
+                        {' '}
+                        {/* a 태그의 기본 동작을 막고 react-router-dom을 사용하여 이동합니다. */}
                         <img src={logo} className="logo" alt="logo" />
                     </a>
                     <button className="nav-toggle" onClick={toggleLinks}>
                         <FaBars />
                     </button>
                 </div>
-                {/* 메뉴버튼 클릭시 목록 보이도록 */}
                 <div className="links-container" ref={linksContainerRef}>
                     <ul className="links" ref={linksRef}>
-                        {/* data에서 Nav목록 가져오기 */}
-                        {links.map((link) => {
+                        {links.map((link: LinkType) => {
                             const { id, url, text } = link;
                             return (
                                 <li key={id}>
-                                    <Link to={url}>{text}</Link>
+                                    <Link to={url} onClick={handleLinkClick}>
+                                        {text}
+                                    </Link>
                                 </li>
                             );
                         })}

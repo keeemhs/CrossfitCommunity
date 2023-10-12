@@ -7,7 +7,14 @@ import HookGripTape from '../img/HookGripTape.jpeg';
 import LiftingStrap from '../img/LiftingStrap.jpeg';
 import HairBand from '../img/HairBand.jpeg';
 
-export const equipments = [
+export interface Equipment {
+    id: number;
+    title: string;
+    img: string;
+    hyperlink: string;
+}
+
+export const equipments: Equipment[] = [
     {
         id: 1,
         title: '허리벨트',

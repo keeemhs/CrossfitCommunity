@@ -1,4 +1,15 @@
-export const HeroWODsList = [
+export interface HeroWOD {
+    id: number;
+    title: string;
+    type: string;
+    round: string;
+    timeCap: string;
+    activity: string;
+    weight: string;
+    createdOn: string;
+}
+
+export const HeroWODsList: HeroWOD[] = [
     {
         id: 1,
         title: 'MURPH',

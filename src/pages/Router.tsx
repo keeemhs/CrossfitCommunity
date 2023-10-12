@@ -1,11 +1,12 @@
-import { BrowserRouter, Routes, Route, createBrowserRouter } from 'react-router-dom';
+import React from 'react';
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import Header from '../components/Header';
 import Footer from '../components/Footer';
 import Home from './Home';
 import HeroWODs from './HeroWODs';
 import HeroWODsDetail from './HeroWODsDetail';
 
-export default function Router() {
+const Router: React.FC = () => {
     return (
         <>
             <BrowserRouter>
@@ -19,4 +20,6 @@ export default function Router() {
             </BrowserRouter>
         </>
     );
-}
+};
+
+export default Router;
