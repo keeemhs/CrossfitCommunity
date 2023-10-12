@@ -1,0 +1,70 @@
+/* HeroWODs.scss */
+
+.board {
+    text-align: center;
+    display: flex;
+    justify-content: center;
+}
+
+.board-list {
+    width: 800px;
+    margin: 0 auto;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    margin-left: 10px;
+    margin-right: 10px;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    background-color: lightblue;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+h2 {
+    font-size: 24px;
+    margin-bottom: 16px;
+}
+
+h4 {
+    font-size: 14px;
+    text-align: right;
+    margin-bottom: 12px;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+thead th,
+tbody td {
+    border: 1px solid #000; /* Change border color to black */
+    padding: 8px;
+    text-align: left;
+}
+
+thead th:first-child,
+tbody td:first-child,
+thead th:last-child,
+tbody td:last-child {
+    text-align: center;
+}
+
+th {
+    background-color: #f7f7f7;
+}
+
+.title a {
+    color: #007bff;
+    text-decoration: none;
+}
+
+.title a:hover {
+    text-decoration: underline;
+}
+
+@media (max-width: 820px) {
+    .board-list {
+        max-width: 800px;
+    }
+}

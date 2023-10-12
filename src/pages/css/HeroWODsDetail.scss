@@ -1,0 +1,42 @@
+/* HeroWODs.scss */
+
+.detail {
+    text-align: center;
+    display: flex;
+    justify-content: center;
+}
+
+.hero-wod-detail {
+    text-align: center;
+    width: 800px;
+    margin: 0 auto;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    margin-left: 10px;
+    margin-right: 10px;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    background-color: lightblue;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+h2 {
+    font-size: 24px;
+    margin-bottom: 16px;
+}
+
+.hero-wod-info {
+    font-size: 18px;
+    margin-bottom: 12px;
+}
+
+.hero-wod-date {
+    font-size: 14px;
+    text-align: right;
+}
+@media (max-width: 820px) {
+    .hero-wod_detail {
+        max-width: 800px;
+    }
+}
