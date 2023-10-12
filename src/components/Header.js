@@ -1,3 +1,4 @@
+import { Link, useNavigate } from 'react-router-dom';
 import React, { useState, useRef, useEffect } from 'react';
 import { FaBars } from 'react-icons/fa';
 import { links } from './NavbarData';
@@ -39,7 +40,7 @@ const Header = () => {
                             const { id, url, text } = link;
                             return (
                                 <li key={id}>
-                                    <a href={url}>{text}</a>
+                                    <Link to={url}>{text}</Link>
                                 </li>
                             );
                         })}
