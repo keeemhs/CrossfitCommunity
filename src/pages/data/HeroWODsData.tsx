@@ -40,4 +40,14 @@ export const HeroWODsList: HeroWOD[] = [
         weight: '(24/16kg)',
         createdOn: '2021-10-04',
     },
+    {
+        id: 4,
+        title: 'JASON',
+        type: 'For Time',
+        round: '1',
+        timeCap: '25',
+        activity: '100 Air Squiats5 Muscle-Ups75 Air Squiats10 Muscle-Ups50 Air Squiats15 Muscle-Ups25 Air Squiats20 Muscle-Ups',
+        weight: '',
+        createdOn: '2021-10-04',
+    },
 ];

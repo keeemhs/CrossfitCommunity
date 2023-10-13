@@ -5,6 +5,8 @@ import Footer from '../components/Footer';
 import Home from './Home';
 import HeroWODs from './HeroWODs';
 import HeroWODsDetail from './HeroWODsDetail';
+import PersonalWODs from './PersonalWODs';
+import PersonalWODsDetail from './PersonalWODsDetail';
 
 const Router: React.FC = () => {
     return (
@@ -15,6 +17,8 @@ const Router: React.FC = () => {
                     <Route path="/" element={<Home />} />
                     <Route path="/HeroWODs" element={<HeroWODs />} />
                     <Route path="/HeroWODs/:id" element={<HeroWODsDetail />} />
+                    <Route path="/PersonalWODs" element={<PersonalWODs />} />
+                    <Route path="/PersonalWODs/:id" element={<PersonalWODsDetail />} />
                 </Routes>
                 <Footer />
             </BrowserRouter>

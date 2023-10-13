@@ -1,38 +1,38 @@
 import React from 'react';
 import { useParams } from 'react-router-dom';
-import { HeroWODsList } from './data/HeroWODsData';
+import { PersonalWodsList } from './data/PersonalWODsData';
 import dayjs from 'dayjs';
 import './css/HeroWODsDetail.scss';
-import { UserRankList } from './data/HeroWODsRecord';
+import { PersonalWODsRecordList } from './data/PersonalWODsRecord';
 
-const HeroWODDetail = () => {
+const PersonalWODsDetail = () => {
     const { id } = useParams();
-    const heroWod = HeroWODsList.find((board) => board.id === Number(id));
+    const personalWOD = PersonalWodsList.find((board) => board.id === Number(id));
 
-    if (!heroWod) {
+    if (!personalWOD) {
         return <div>해당 HeroWOD를 찾을 수 없습니다.</div>;
     }
 
-    const userRanks = UserRankList.filter((rank) => rank.activityid === heroWod.id);
+    const userRanks = PersonalWODsRecordList.filter((rank) => rank.activityid === personalWOD.id);
     userRanks.sort((a, b) => a.timecap - b.timecap); // 오름차순 정렬
 
     return (
         <section className="detail">
             <div className="hero-wod-detail">
-                <h2>{heroWod.title}</h2>
+                <h2>{personalWOD.title}</h2>
                 <p className="hero-wod-info">
-                    {heroWod.round} Rounds {heroWod.type}
+                    {personalWOD.round} Rounds {personalWOD.type}
                 </p>
                 <p
                     className="hero-wod-info"
                     dangerouslySetInnerHTML={{
-                        __html: heroWod.activity.replace(/(\d+)/g, (match, p1, offset, string) => {
+                        __html: personalWOD.activity.replace(/(\d+)/g, (match, p1, offset, string) => {
                             return offset === 0 ? match : '<br/>' + match;
                         }),
                     }}
                 />
-                <p className="hero-wod-info">Time Cap : {heroWod.timeCap}mins</p>
-                <p className="hero-wod-date">Date: {dayjs(heroWod.createdOn).format('YYYY.MM.DD')}</p>
+                <p className="hero-wod-info">Time Cap : {personalWOD.timeCap}mins</p>
+                <p className="hero-wod-date">Date: {dayjs(personalWOD.createdOn).format('YYYY.MM.DD')}</p>
                 <button className="go-back-button" onClick={() => window.history.back()}>
                     뒤로 가기
                 </button>
@@ -52,4 +52,4 @@ const HeroWODDetail = () => {
     );
 };
 
-export default HeroWODDetail;
+export default PersonalWODsDetail;
