@@ -8,6 +8,8 @@ import HeroWODsDetail from './HeroWODsDetail';
 import PersonalWODs from './PersonalWODs';
 import PersonalWODsDetail from './PersonalWODsDetail';
 import Crossfit from './Crossfit';
+import TheGirlsWODs from './TheGirlsWODs';
+import MyPage from './MyPage';
 
 const Router: React.FC = () => {
     return (
@@ -17,10 +19,12 @@ const Router: React.FC = () => {
                 <Routes>
                     <Route path="/" element={<Home />} />
                     <Route path="/Crossfit" element={<Crossfit />} />
+                    <Route path="/TheGirlsWODs" element={<TheGirlsWODs />} />
                     <Route path="/HeroWODs" element={<HeroWODs />} />
                     <Route path="/HeroWODs/:id" element={<HeroWODsDetail />} />
                     <Route path="/PersonalWODs" element={<PersonalWODs />} />
                     <Route path="/PersonalWODs/:id" element={<PersonalWODsDetail />} />
+                    <Route path="/mypage" element={<MyPage />} />
                 </Routes>
                 <Footer />
             </BrowserRouter>
