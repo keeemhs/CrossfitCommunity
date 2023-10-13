@@ -21,23 +21,21 @@ const Crossfit = () => {
                         <span>우리나라에는 2009년부터 유행하기 시작했다.</span>
                         <br />
                         <span>프로그램에 따라 차이는 있지만 일반적으로 근력 운동과 유산소 운동을 섞어 체력, 근력,</span>
-                        <span>민첩성, 심폐지구력, 유연성, 속도, 균형감각, 정확성 등 전신을 발달시킬 수 있도록 고안되었다.</span>
+                        <span>민첩성, 심폐지구력, 유연성, 속도, 균형감각, 정확성 등을 발달되도록 고안되었다.</span>
                         <span>고강도의 훈련을 통해 최단 시간에 최대 효과를 낼 수 있으며,</span>
-                        <span>자신의 체력에 맞게 운동 강도를 조절해 남녀노소 누구나 부담 없이 즐길 수 있다는 장점이 있다.</span>
+                        <span>체력에 맞게 운동 강도를 조절해 남녀노소 누구나 부담 없이 즐길 수 있다는 장점이 있다.</span>
                     </div>
                     <hr />
                     <div className="explain_card">
                         <div className="explain_1_2">
-                            <div className="explain_1_2_1">
-                                <img src={GregGlassman} className="GregGlassman" />
-                            </div>
+                            <img src={GregGlassman} className="GregGlassman" />
                             <div className="explain_1_2_2">
                                 <span>크로스핏의 창시자: 그레그 글래스먼(Greg Glassman)</span>
                                 <span>'Greg Glassman'은 한쪽으로 치우치지 않는 총제적인</span>
-                                <span>체력을 기르기 위해 사람의 신체 능력을 심폐지구력, 정확성,</span>
-                                <span>협응력, 밸런스, 민첩성, 스피드, 힘, 유연성, 스태미너,</span>
-                                <span>근지구력 등 10개의 항목으로 나누고 이를 골고루 발달 시킬 수 있는</span>
-                                <span>W.O.D(Wrokout of the Day) 프로그램을 개발하였습니다.</span>
+                                <span>체력을 기르기 위해 사람의 신체 능력을 심폐지구력,</span>
+                                <span>협응력, 밸런스, 민첩성, 스피드, 힘, 유연성, 근지구력,</span>
+                                <span>등 10개 항목으로 나누고 이를 골고루 발달 시킬 수 있는</span>
+                                <span>W.O.D(Wrokout of the Day)을 개발하였습니다.</span>
                             </div>
                         </div>
                     </div>

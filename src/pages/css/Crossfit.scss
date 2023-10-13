@@ -31,7 +31,7 @@
 .explain_1_2 {
     display: flex; /* Flexbox를 사용하여 내부 요소를 나란히 정렬합니다 */
     margin-top: 10px;
-    width: 800px;
+    width: 525px;
 }
 .explain_card {
     display: flex;
@@ -39,7 +39,6 @@
     justify-content: center;
 }
 .explain_card > .explain_1_2 > .explain_1_2_1 {
-    width: 100%;
     text-align: right; /* 두 번째 div를 왼쪽 정렬합니다 */
     padding-right: 5px;
 }
@@ -51,6 +50,21 @@
 .explain_1_2 > div {
     flex: 1; /* Flexbox를 사용하여 동일한 너비를 갖게 합니다 */
     margin: 0 10px; /* 각 div 사이의 간격을 조절합니다 */
+}
+@media (max-width: 680px) {
+    .GregGlassman {
+        width: 100px;
+    }
+    .explain_1_2 {
+        font-size: 2vw;
+    }
+
+    .explain_card > .explain_1_2 > .explain_1_2_2 {
+        text-align: center;
+    }
+    .explain_1_2 {
+        width: 425px;
+    }
 }
 
 @media (max-width: 600px) {
