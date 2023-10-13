@@ -1,0 +1,66 @@
+.main_part {
+    margin-top: 20px;
+    text-align: center;
+}
+.red {
+    color: red;
+}
+.title {
+    margin-bottom: 30px;
+}
+.explain_1 {
+    width: 80%;
+    display: inline-block;
+}
+.AroundCrossfit {
+    width: 300px;
+}
+.explain_1_1 {
+    margin-bottom: 10px;
+}
+.explain_1_1 span {
+    display: block;
+}
+
+.GregGlassman {
+    width: 150px;
+}
+.explain_1_2 span {
+    display: block;
+}
+.explain_1_2 {
+    display: flex; /* Flexbox를 사용하여 내부 요소를 나란히 정렬합니다 */
+    margin-top: 10px;
+    width: 800px;
+}
+.explain_card {
+    display: flex;
+    text-align: center;
+    justify-content: center;
+}
+.explain_card > .explain_1_2 > .explain_1_2_1 {
+    width: 100%;
+    text-align: right; /* 두 번째 div를 왼쪽 정렬합니다 */
+    padding-right: 5px;
+}
+.explain_card > .explain_1_2 > .explain_1_2_2 {
+    text-align: left; /* 두 번째 div를 왼쪽 정렬합니다 */
+    padding-left: 5px;
+}
+
+.explain_1_2 > div {
+    flex: 1; /* Flexbox를 사용하여 동일한 너비를 갖게 합니다 */
+    margin: 0 10px; /* 각 div 사이의 간격을 조절합니다 */
+}
+
+@media (max-width: 600px) {
+    h1 {
+        font-size: 40px;
+    }
+    .AroundCrossfit {
+        width: 200px;
+    }
+    .explain_1_1 span {
+        font-size: 2vw; /* 또는 다른 적절한 크기 */
+    }
+}

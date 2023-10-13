@@ -7,7 +7,7 @@ export interface Link {
 export const links: Link[] = [
     {
         id: 1,
-        url: '/about',
+        url: '/Crossfit',
         text: 'CrossFit',
     },
     {

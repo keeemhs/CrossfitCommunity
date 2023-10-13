@@ -7,6 +7,7 @@ import HeroWODs from './HeroWODs';
 import HeroWODsDetail from './HeroWODsDetail';
 import PersonalWODs from './PersonalWODs';
 import PersonalWODsDetail from './PersonalWODsDetail';
+import Crossfit from './Crossfit';
 
 const Router: React.FC = () => {
     return (
@@ -15,6 +16,7 @@ const Router: React.FC = () => {
                 <Header />
                 <Routes>
                     <Route path="/" element={<Home />} />
+                    <Route path="/Crossfit" element={<Crossfit />} />
                     <Route path="/HeroWODs" element={<HeroWODs />} />
                     <Route path="/HeroWODs/:id" element={<HeroWODsDetail />} />
                     <Route path="/PersonalWODs" element={<PersonalWODs />} />
