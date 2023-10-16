@@ -64,6 +64,9 @@ const PersonalWODs = () => {
                         })}
                     </tbody>
                 </table>
+                <div className="pagination">
+                    <Link to="/PersonalWODs/PersonalWODsAdd">등록하기</Link>
+                </div>
             </div>
         </section>
     );
