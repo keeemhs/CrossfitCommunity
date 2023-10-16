@@ -22,6 +22,11 @@ const HeroWODDetail = () => {
     const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
         e.preventDefault();
 
+        if (!name || !time) {
+            alert('이름과 기록시간을 입력하세요.');
+            return;
+        }
+
         const newUserRank = {
             id: userRankList.length + 1,
             activityid: heroWod.id,

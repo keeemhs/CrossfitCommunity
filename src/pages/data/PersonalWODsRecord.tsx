@@ -12,4 +12,10 @@ export const PersonalWODsRecordList: PersonalWODsRecord[] = [
         name: 'g__gyu_min',
         timecap: 23,
     },
+    {
+        id: 2,
+        activityid: 1,
+        name: 'hs_fitter',
+        timecap: 21,
+    },
 ];
