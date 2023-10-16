@@ -55,6 +55,7 @@ const HeroWODDetail = () => {
                         }),
                     }}
                 />
+                <p className="hero-wod-info">Weight : {heroWod.weight}</p>
                 <p className="hero-wod-info">Time Cap : {heroWod.timeCap}mins</p>
                 <p className="hero-wod-date">Date: {dayjs(heroWod.createdOn).format('YYYY.MM.DD')}</p>
                 <button className="go-back-button" onClick={() => window.history.back()}>

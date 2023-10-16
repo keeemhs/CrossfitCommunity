@@ -15,6 +15,9 @@ const HeroWODs = () => {
         },
     ]);
 
+    const [currentPage, setCurrentPage] = useState(1);
+    const postsPerPage = 10;
+
     useEffect(() => {
         axios
             .get('/HeroWODs')
@@ -22,10 +25,17 @@ const HeroWODs = () => {
             .catch((error) => console.log(error));
     }, []);
 
-    // UserRankList에서 acrivityid와 일치하는 항목의 개수를 세는 함수
     const getMatchingUserRanksCount = (activityId: Number) => {
         return UserRankList.filter((item) => item.activityid === activityId).length;
     };
+
+    // 현재 페이지에 해당하는 게시글 목록
+    const indexOfLastPost = currentPage * postsPerPage;
+    const indexOfFirstPost = indexOfLastPost - postsPerPage;
+    const currentPosts = HeroWODsList.slice(indexOfFirstPost, indexOfLastPost);
+
+    // 페이지 변경 시 호출되는 함수
+    const paginate = (pageNumber: number) => setCurrentPage(pageNumber);
 
     return (
         <section className="board">
@@ -50,7 +60,7 @@ const HeroWODs = () => {
                     </thead>
 
                     <tbody>
-                        {HeroWODsList.map((board, index) => {
+                        {currentPosts.map((board, index) => {
                             const matchingUserRanksCount = getMatchingUserRanksCount(board.id);
                             return (
                                 <tr key={board.id}>
@@ -64,6 +74,15 @@ const HeroWODs = () => {
                         })}
                     </tbody>
                 </table>
+
+                {/* Pagination */}
+                <div className="pagination center">
+                    {Array.from({ length: Math.ceil(HeroWODsList.length / postsPerPage) }).map((_, index) => (
+                        <button key={index} onClick={() => paginate(index + 1)}>
+                            {index + 1}
+                        </button>
+                    ))}
+                </div>
             </div>
         </section>
     );

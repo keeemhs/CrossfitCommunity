@@ -42,4 +42,10 @@ export const UserRankList: UserRank[] = [
         name: 'hs_fitter',
         timecap: 25,
     },
+    {
+        id: 7,
+        activityid: 6,
+        name: 'hs_fitter',
+        timecap: 23,
+    },
 ];

@@ -68,3 +68,30 @@ th {
         max-width: 800px;
     }
 }
+
+.center {
+    text-align: center; /* 가운데 정렬 */
+}
+
+.pagination button {
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    font-size: 16px;
+    margin: 0 5px;
+    padding: 0;
+    display: inline-block;
+    color: black; /* 기본 색상 (검은색) */
+}
+
+.pagination button:focus {
+    outline: none;
+}
+
+.pagination button:hover {
+    color: #007bff; /* 버튼 위에 마우스를 올렸을 때 색상 변경 */
+}
+
+.pagination .active {
+    color: #007bff; /* 선택된 페이지의 색상 (파란색) */
+}
