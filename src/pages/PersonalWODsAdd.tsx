@@ -46,37 +46,50 @@ const PersonalWODsAdd: React.FC = () => {
         <>
             <form className="form-container" onSubmit={handleSubmit}>
                 <h2>PersonalWODs ADD</h2>
-                <div>
+                <div className="form-group">
+                    <label>
+                        <input type="checkbox" name="type" value="AMRAP" checked={formData.type.includes('AMRAP')} onChange={handleChange} />
+                        AMRAP
+                    </label>
+                    <label>
+                        <input type="checkbox" name="type" value="EMOM" checked={formData.type.includes('EMOM')} onChange={handleChange} />
+                        EMOM
+                    </label>
+                    <label>
+                        <input type="checkbox" name="type" value="FORTIME" checked={formData.type.includes('FORTIME')} onChange={handleChange} />
+                        FOR TIME
+                    </label>
+                    <label>
+                        <input type="checkbox" name="type" value="TABATA" checked={formData.type.includes('TABATA')} onChange={handleChange} />
+                        TABATA
+                    </label>
+                </div>
+                <div className="form-group">
                     <label>
                         제목:
                         <input type="text" name="title" value={formData.title} onChange={handleChange} required />
                     </label>
                 </div>
-                <div>
-                    <label>
-                        유형:
-                        <input type="text" name="type" value={formData.type} onChange={handleChange} required />
-                    </label>
-                </div>
-                <div>
+
+                <div className="form-group">
                     <label>
                         라운드:
                         <input type="text" name="round" value={formData.round} onChange={handleChange} required />
                     </label>
                 </div>
-                <div>
+                <div className="form-group">
                     <label>
                         시간 제한:
                         <input type="text" name="timeCap" value={formData.timeCap} onChange={handleChange} required />
                     </label>
                 </div>
-                <div>
+                <div className="form-group">
                     <label>
                         활동:
                         <input type="text" name="activity" value={formData.activity} onChange={handleChange} required />
                     </label>
                 </div>
-                <div>
+                <div className="form-group">
                     <label>
                         무게:
                         <input type="text" name="weight" value={formData.weight} onChange={handleChange} required />
