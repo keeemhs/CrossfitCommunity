@@ -1,24 +1,37 @@
 import React, { useState } from 'react';
 import './css/MyPage.scss';
+import { UserData } from './data/User'; // User.tsx 파일에서 데이터 가져오기
 
 const MyPage: React.FC = () => {
     const [email, setEmail] = useState('');
+    const [password, setPassword] = useState('');
     const [isValidEmail, setIsValidEmail] = useState(true);
 
     const handleEmailChange = (e: React.ChangeEvent<HTMLInputElement>) => {
         const inputEmail = e.target.value;
         setEmail(inputEmail);
 
-        // 정규 표현식을 사용하여 이메일 형식을 확인합니다.
         const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
         const isValid = emailRegex.test(inputEmail);
 
         setIsValidEmail(isValid);
     };
 
+    const handlePasswordChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+        const inputPassword = e.target.value;
+        setPassword(inputPassword);
+    };
+
     const handleLoginClick = () => {
         if (isValidEmail) {
-            console.log('로그인 버튼이 클릭되었습니다.');
+            const user = UserData.find((u) => u.userid === email && u.password === password);
+
+            if (user) {
+                alert('로그인되었습니다.');
+                window.location.href = '/';
+            } else {
+                alert('이메일 혹은 비밀번호가 올바르지 않습니다.');
+            }
         } else {
             alert('올바른 이메일 형식이 아닙니다.');
         }
@@ -39,7 +52,7 @@ const MyPage: React.FC = () => {
                 </div>
                 <div className="login_pw">
                     <h4>Password</h4>
-                    <input type="password" name="" id="" placeholder="Password" />
+                    <input type="password" name="" id="" placeholder="Password" value={password} onChange={handlePasswordChange} />
                 </div>
                 <div className="login_etc">
                     <div className="checkbox">

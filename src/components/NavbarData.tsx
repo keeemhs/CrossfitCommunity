@@ -28,6 +28,6 @@ export const links: Link[] = [
     {
         id: 5,
         url: '/mypage',
-        text: 'mypage',
+        text: 'Login',
     },
 ];
