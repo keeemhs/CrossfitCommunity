@@ -12,4 +12,10 @@ export const UserData: User[] = [
         password: '12345678',
         name: 'keeemhs',
     },
+    {
+        id: 2,
+        userid: 'uhting2@naver.com',
+        password: '12345678',
+        name: 'g__gyu_min',
+    },
 ];

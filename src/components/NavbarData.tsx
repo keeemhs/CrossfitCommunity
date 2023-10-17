@@ -2,6 +2,7 @@ export interface Link {
     id: number;
     url: string;
     text: string;
+    isLoginLogout?: boolean;
 }
 
 export const links: Link[] = [

@@ -1,8 +1,15 @@
-import { Link, useNavigate } from 'react-router-dom';
 import React, { useState, useRef, useEffect } from 'react';
 import { FaBars } from 'react-icons/fa';
-import { links, Link as LinkType } from './NavbarData'; // 이름이 겹치므로 별칭을 사용합니다.
+import { Link, useNavigate } from 'react-router-dom';
+import { links, Link as LinkType } from './NavbarData';
 import logo from './img/CrossFitLogo.svg';
+
+export interface Link {
+    id: number;
+    url: string;
+    text: string;
+    isLoginLogout?: boolean;
+}
 
 const Header: React.FC = () => {
     const [showLinks, setShowLinks] = useState(false);
@@ -10,12 +17,18 @@ const Header: React.FC = () => {
     const linksRef = useRef<HTMLUListElement>(null);
     const navigate = useNavigate();
 
+    const getCookie = (name: string) => {
+        const value = `; ${document.cookie}`;
+        const parts = value.split(`; ${name}=`);
+        if (parts.length === 2) return parts.pop()?.split(';').shift();
+    };
+
     const toggleLinks = () => {
         setShowLinks(!showLinks);
     };
 
     const handleLinkClick = () => {
-        setShowLinks(false); // 링크 클릭 시 메뉴를 닫습니다.
+        setShowLinks(false);
     };
 
     useEffect(() => {
@@ -26,6 +39,15 @@ const Header: React.FC = () => {
             linksContainerRef.current!.style.height = '0px';
         }
     }, [showLinks]);
+
+    const username = getCookie('username');
+
+    const handleLogoutClick = () => {
+        // 쿠키 삭제
+        document.cookie = 'username=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;';
+        document.cookie = 'userid=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;';
+        navigate('/'); // 로그아웃 후 홈페이지로 이동
+    };
 
     return (
         <nav>
@@ -38,8 +60,6 @@ const Header: React.FC = () => {
                             navigate('/');
                         }}
                     >
-                        {' '}
-                        {/* a 태그의 기본 동작을 막고 react-router-dom을 사용하여 이동합니다. */}
                         <img src={logo} className="logo" alt="logo" />
                     </a>
                     <button className="nav-toggle" onClick={toggleLinks}>
@@ -49,15 +69,30 @@ const Header: React.FC = () => {
                 <div className="links-container" ref={linksContainerRef}>
                     <ul className="links" ref={linksRef}>
                         {links.map((link: LinkType) => {
-                            const { id, url, text } = link;
-                            return (
-                                <li key={id}>
-                                    <Link to={url} onClick={handleLinkClick}>
-                                        {text}
-                                    </Link>
-                                </li>
-                            );
+                            const { id, url, text, isLoginLogout } = link;
+                            if (isLoginLogout) {
+                                if (username) {
+                                    return (
+                                        <li key={id}>
+                                            <span onClick={handleLogoutClick}>Logout</span>
+                                        </li>
+                                    );
+                                }
+                            } else {
+                                return (
+                                    <li key={id}>
+                                        <Link to={url} onClick={handleLinkClick}>
+                                            {text}
+                                        </Link>
+                                    </li>
+                                );
+                            }
                         })}
+                        {username && (
+                            <li>
+                                <span>, {username}</span>
+                            </li>
+                        )}
                     </ul>
                 </div>
             </div>

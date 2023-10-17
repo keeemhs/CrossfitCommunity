@@ -28,6 +28,14 @@ const MyPage: React.FC = () => {
 
             if (user) {
                 alert('로그인되었습니다.');
+
+                // 현재 시간에서 5분 뒤의 시간을 계산합니다.
+                const expires = new Date(Date.now() + 5 * 60 * 1000); // 5분 = 5 * 60 * 1000 밀리초
+
+                // 쿠키 생성
+                document.cookie = `userid=${user.userid}; expires=${expires.toUTCString()}; path=/`;
+                document.cookie = `username=${user.name}; expires=${expires.toUTCString()}; path=/`;
+
                 window.location.href = '/';
             } else {
                 alert('이메일 혹은 비밀번호가 올바르지 않습니다.');
