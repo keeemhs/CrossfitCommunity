@@ -13,8 +13,8 @@ export const links: Link[] = [
     },
     {
         id: 2,
-        url: '/TheGirlsWODs',
-        text: 'TheGirlsWODs',
+        url: '/Location',
+        text: 'Location',
     },
     {
         id: 3,

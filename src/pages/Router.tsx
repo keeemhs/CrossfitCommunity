@@ -8,7 +8,7 @@ import HeroWODsDetail from './HeroWODsDetail';
 import PersonalWODs from './PersonalWODs';
 import PersonalWODsDetail from './PersonalWODsDetail';
 import Crossfit from './Crossfit';
-import TheGirlsWODs from './TheGirlsWODs';
+import Location from './Location';
 import MyPage from './MyPage';
 import PersonalWODsAdd from './PersonalWODsAdd';
 
@@ -20,7 +20,7 @@ const Router: React.FC = () => {
                 <Routes>
                     <Route path="/" element={<Home />} />
                     <Route path="/Crossfit" element={<Crossfit />} />
-                    <Route path="/TheGirlsWODs" element={<TheGirlsWODs />} />
+                    <Route path="/Location" element={<Location />} />
                     <Route path="/HeroWODs" element={<HeroWODs />} />
                     <Route path="/HeroWODs/:id" element={<HeroWODsDetail />} />
                     <Route path="/PersonalWODs" element={<PersonalWODs />} />

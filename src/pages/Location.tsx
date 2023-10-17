@@ -1,4 +1,4 @@
-const TheGirlsWODs = () => {
+const Location = () => {
     return (
         <>
             <h3>준비중...</h3>
@@ -6,4 +6,4 @@ const TheGirlsWODs = () => {
     );
 };
 
-export default TheGirlsWODs;
+export default Location;
