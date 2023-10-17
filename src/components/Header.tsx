@@ -4,13 +4,6 @@ import { Link, useNavigate } from 'react-router-dom';
 import { links, Link as LinkType } from './NavbarData';
 import logo from './img/CrossFitLogo.svg';
 
-export interface Link {
-    id: number;
-    url: string;
-    text: string;
-    isLoginLogout?: boolean;
-}
-
 const Header: React.FC = () => {
     const [showLinks, setShowLinks] = useState(false);
     const linksContainerRef = useRef<HTMLDivElement>(null);
@@ -20,7 +13,11 @@ const Header: React.FC = () => {
     const getCookie = (name: string) => {
         const value = `; ${document.cookie}`;
         const parts = value.split(`; ${name}=`);
-        if (parts.length === 2) return parts.pop()?.split(';').shift();
+        if (parts.length === 2) {
+            const cookieValue = parts.pop()?.split(';').shift();
+            console.log('Cookie Value:', cookieValue); // 중간 값 확인
+            return cookieValue;
+        }
     };
 
     const toggleLinks = () => {
@@ -43,10 +40,12 @@ const Header: React.FC = () => {
     const username = getCookie('username');
 
     const handleLogoutClick = () => {
-        // 쿠키 삭제
+        const username = getCookie('username');
+        console.log('username:', username);
+
         document.cookie = 'username=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;';
         document.cookie = 'userid=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;';
-        navigate('/'); // 로그아웃 후 홈페이지로 이동
+        navigate('/');
     };
 
     return (
@@ -77,16 +76,23 @@ const Header: React.FC = () => {
                                             <span onClick={handleLogoutClick}>Logout</span>
                                         </li>
                                     );
+                                } else {
+                                    return (
+                                        <li key={id}>
+                                            <Link to={url} onClick={handleLinkClick}>
+                                                {text}
+                                            </Link>
+                                        </li>
+                                    );
                                 }
-                            } else {
-                                return (
-                                    <li key={id}>
-                                        <Link to={url} onClick={handleLinkClick}>
-                                            {text}
-                                        </Link>
-                                    </li>
-                                );
                             }
+                            return (
+                                <li key={id}>
+                                    <Link to={url} onClick={handleLinkClick}>
+                                        {text}
+                                    </Link>
+                                </li>
+                            );
                         })}
                         {username && (
                             <li>

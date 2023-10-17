@@ -30,5 +30,6 @@ export const links: Link[] = [
         id: 5,
         url: '/mypage',
         text: 'Login',
+        isLoginLogout: true,
     },
 ];
