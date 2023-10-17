@@ -73,7 +73,7 @@ th {
     text-align: center; /* 가운데 정렬 */
 }
 
-.pagination button {
+.paginations button {
     background-color: transparent;
     border: none;
     cursor: pointer;
@@ -84,14 +84,14 @@ th {
     color: black; /* 기본 색상 (검은색) */
 }
 
-.pagination button:focus {
+.paginations button:focus {
     outline: none;
 }
 
-.pagination button:hover {
+.paginations button:hover {
     color: #007bff; /* 버튼 위에 마우스를 올렸을 때 색상 변경 */
 }
 
-.pagination .active {
+.paginations .active {
     color: #007bff; /* 선택된 페이지의 색상 (파란색) */
 }

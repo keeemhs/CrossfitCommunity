@@ -6,14 +6,7 @@ import axios from 'axios';
 import './css/PersonalWODs.scss';
 
 const PersonalWODs = () => {
-    const [boardList, setBoardList] = useState([
-        {
-            id: '',
-            title: '',
-            content: '',
-            createdOn: '',
-        },
-    ]);
+    const [boardList, setBoardList] = useState([]);
 
     useEffect(() => {
         axios
@@ -22,25 +15,39 @@ const PersonalWODs = () => {
             .catch((error) => console.log(error));
     }, []);
 
-    // UserRankList에서 acrivityid와 일치하는 항목의 개수를 세는 함수
-    const getMatchingUserRanksCount = (activityId: Number) => {
+    const getMatchingUserRanksCount = (activityId: number) => {
         return PersonalWODsRecordList.filter((item) => item.activityid === activityId).length;
+    };
+
+    const getCookie = (name: string): string | undefined => {
+        const value = `; ${document.cookie}`;
+        const parts = value.split(`; ${name}=`);
+        if (parts.length === 2) return parts.pop()?.split(';').shift();
+        return undefined;
+    };
+
+    const handleRegisterClick = () => {
+        const username = getCookie('username');
+
+        if (!username) {
+            alert('로그인 후 사용해주세요.');
+            return;
+        }
+
+        window.location.href = '/PersonalWODs/PersonalWODsAdd';
     };
 
     return (
         <section className="board">
             <div className="board-list">
                 <h2>PersonalWODs</h2>
-
                 <h4>Total post: {PersonalWodsList.length}개</h4>
-
                 <table>
                     <colgroup>
                         <col width="10%" />
                         <col width="70%" />
                         <col width="20%" />
                     </colgroup>
-
                     <thead>
                         <tr>
                             <th>No</th>
@@ -48,7 +55,6 @@ const PersonalWODs = () => {
                             <th>Participants</th>
                         </tr>
                     </thead>
-
                     <tbody>
                         {PersonalWodsList.map((board, index) => {
                             const matchingUserRanksCount = getMatchingUserRanksCount(board.id);
@@ -65,7 +71,7 @@ const PersonalWODs = () => {
                     </tbody>
                 </table>
                 <div className="pagination">
-                    <Link to="/PersonalWODs/PersonalWODsAdd">등록하기</Link>
+                    <button onClick={handleRegisterClick}>등록하기</button>
                 </div>
             </div>
         </section>

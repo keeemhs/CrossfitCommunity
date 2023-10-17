@@ -76,7 +76,7 @@ const HeroWODs = () => {
                 </table>
 
                 {/* Pagination */}
-                <div className="pagination center">
+                <div className="paginations center">
                     {Array.from({ length: Math.ceil(HeroWODsList.length / postsPerPage) }).map((_, index) => (
                         <button key={index} onClick={() => paginate(index + 1)}>
                             {index + 1}
