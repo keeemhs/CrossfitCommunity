@@ -1,6 +1,7 @@
 import React from 'react';
 import 'react-responsive-modal/styles.css';
 import { Modal } from 'react-responsive-modal';
+import { SassColor } from 'sass';
 
 type PropsType = {
     click?: boolean;
@@ -24,7 +25,7 @@ const PrivacyModal: React.FC<PropsType> = (props: PropsType) => {
                 Privacy Policy
             </button>
             <Modal open={open} onClose={() => setOpen(false)} center>
-                <h2>Privacy Policy</h2>
+                <h2 style={{ color: 'black' }}>Privacy Policy</h2>
                 {policyText}
             </Modal>
         </>
