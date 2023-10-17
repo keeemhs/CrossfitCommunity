@@ -15,7 +15,7 @@ export const UserData: User[] = [
     {
         id: 2,
         userid: 'uhting2@naver.com',
-        password: '12345678',
+        password: '11111111',
         name: 'g__gyu_min',
     },
 ];

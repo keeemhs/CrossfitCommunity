@@ -12,6 +12,16 @@ export interface HeroWOD {
 export const HeroWODsList: HeroWOD[] = [
     {
         id: 1,
+        title: 'WATSON',
+        type: 'For Time',
+        round: '1',
+        timeCap: '60',
+        activity: '59 Pull-Ups23 Push-Ups400 meter Run59 Ground-to-Overheads23 Toes-to-Bars400 meter Run59 Wall Ball Shots23 Burpees200 meter Run200 Double Unders200 meter Run23 Burpees59 Wall Ball Shots400 meter Run23 Toes-to-Bars59 Ground-to-Overheads400 meter Run23 Push-Ups59 Pull-Ups',
+        weight: '(20/10kg), (20/14lb)',
+        createdOn: '2021-10-04',
+    },
+    {
+        id: 2,
         title: 'MURPH',
         type: 'For Time',
         round: '1',
@@ -21,7 +31,7 @@ export const HeroWODsList: HeroWOD[] = [
         createdOn: '2020-10-04',
     },
     {
-        id: 2,
+        id: 3,
         title: 'LOONEY',
         type: 'For Time',
         round: '7',
@@ -31,7 +41,7 @@ export const HeroWODsList: HeroWOD[] = [
         createdOn: '2021-10-04',
     },
     {
-        id: 3,
+        id: 4,
         title: 'DORK',
         type: 'For Time',
         round: '6',
@@ -41,7 +51,7 @@ export const HeroWODsList: HeroWOD[] = [
         createdOn: '2021-10-04',
     },
     {
-        id: 4,
+        id: 5,
         title: 'JASON',
         type: 'For Time',
         round: '1',
@@ -51,7 +61,7 @@ export const HeroWODsList: HeroWOD[] = [
         createdOn: '2021-10-04',
     },
     {
-        id: 5,
+        id: 6,
         title: 'RENE',
         type: 'For Time',
         round: '7',
@@ -61,7 +71,7 @@ export const HeroWODsList: HeroWOD[] = [
         createdOn: '2021-10-04',
     },
     {
-        id: 6,
+        id: 7,
         title: 'BERT',
         type: 'For Time',
         round: '1',
@@ -71,7 +81,7 @@ export const HeroWODsList: HeroWOD[] = [
         createdOn: '2021-10-04',
     },
     {
-        id: 7,
+        id: 8,
         title: 'PAT',
         type: 'For Time',
         round: '6',
@@ -81,23 +91,13 @@ export const HeroWODsList: HeroWOD[] = [
         createdOn: '2021-10-04',
     },
     {
-        id: 8,
+        id: 9,
         title: 'ZEUS',
         type: 'For Time',
         round: '3',
         timeCap: '40',
         activity: '30 Wall Ball Shots30 Sumo Deadlift High-Pull30 Box Jump30 Push Press30 cal Row30 Push-Ups10 Back Squats (Bodyweight)',
         weight: '(20/14 lb), (75/55 lb), (20 inch)',
-        createdOn: '2021-10-04',
-    },
-    {
-        id: 9,
-        title: 'WILMOT',
-        type: 'For Time',
-        round: '6',
-        timeCap: '30',
-        activity: '50 Air Squats25 Ring Dips',
-        weight: '',
         createdOn: '2021-10-04',
     },
     {
