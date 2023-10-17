@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
 import { HeroWODsList } from './data/HeroWODsData';
 import dayjs from 'dayjs';
@@ -6,30 +6,38 @@ import './css/HeroWODsDetail.scss';
 import { UserRankList } from './data/HeroWODsRecord';
 
 const HeroWODDetail = () => {
-    const { id } = useParams();
+    const { id } = useParams<{ id: string }>(); // id 파라미터를 문자열로 타입 지정
     const heroWod = HeroWODsList.find((board) => board.id === Number(id));
-    const [name, setName] = useState(''); // 사용자 이름
-    const [time, setTime] = useState(''); // 사용자 기록 시간
+    const [name, setName] = useState<string>(''); // 사용자 이름
+    const [time, setTime] = useState<string>(''); // 사용자 기록 시간
     const [userRankList, setUserRankList] = useState(UserRankList);
 
-    if (!heroWod) {
-        return <div>해당 HeroWOD를 찾을 수 없습니다.</div>;
-    }
+    // 쿠키에서 username 가져오기
+    useEffect(() => {
+        const username = getCookie('username');
+        if (username) {
+            setName(username);
+        }
+    }, []);
 
-    const userRanks = userRankList.filter((rank) => rank.activityid === heroWod.id);
-    userRanks.sort((a, b) => a.timecap - b.timecap); // 오름차순 정렬
+    const getCookie = (name: string): string | undefined => {
+        const value = `; ${document.cookie}`;
+        const parts = value.split(`; ${name}=`);
+        if (parts.length === 2) return parts.pop()?.split(';').shift();
+        return undefined; // 명시적으로 반환 타입을 지정
+    };
 
     const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
         e.preventDefault();
 
-        if (!name || !time) {
-            alert('이름과 기록시간을 입력하세요.');
+        if (!getCookie('username')) {
+            alert('로그인 후 이용해주세요.');
             return;
         }
 
         const newUserRank = {
             id: userRankList.length + 1,
-            activityid: heroWod.id,
+            activityid: heroWod?.id || 0,
             name: name,
             timecap: parseInt(time),
         };
@@ -39,6 +47,13 @@ const HeroWODDetail = () => {
         setName('');
         setTime('');
     };
+
+    if (!heroWod) {
+        return <div>해당 HeroWOD를 찾을 수 없습니다.</div>;
+    }
+
+    const userRanks = userRankList.filter((rank) => rank.activityid === heroWod.id);
+    userRanks.sort((a, b) => a.timecap - b.timecap); // 오름차순 정렬
 
     return (
         <section className="detail">
@@ -74,7 +89,7 @@ const HeroWODDetail = () => {
                 ))}
 
                 <form className="record-add" onSubmit={handleSubmit}>
-                    <input className="record-add-input-name" type="text" placeholder="이름" value={name} onChange={(e) => setName(e.target.value)} />
+                    <input className="record-add-input-name" type="text" placeholder="이름" value={name} onChange={(e) => setName(e.target.value)} readOnly />
                     <input className="record-add-input-number" type="number" placeholder="기록 시간(분)" value={time} onChange={(e) => setTime(e.target.value)} />
                     <button type="submit">기록</button>
                 </form>
