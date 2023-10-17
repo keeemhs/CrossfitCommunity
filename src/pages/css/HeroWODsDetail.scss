@@ -16,7 +16,7 @@
     padding: 20px;
     border: 1px solid #ccc;
     border-radius: 8px;
-    background-color: lightblue;
+    background-color: #aee2ff;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
     margin-right: 0; /* 오른쪽 마진을 0으로 변경 */
 }
@@ -30,7 +30,7 @@
     padding: 20px;
     border: 1px solid #ccc;
     border-radius: 8px;
-    background-color: lightgreen;
+    background-color: #abcbff;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
     margin-right: 0; /* 오른쪽 마진을 0으로 변경 */
 }
@@ -64,7 +64,7 @@ h2 {
     font-size: 16px;
     padding: 8px 16px;
     margin-top: 20px;
-    background-color: #4caf50;
+    background-color: #abcbff;
     color: white;
     border: none;
     border-radius: 4px;
@@ -104,15 +104,21 @@ h2 {
 
 .record-add button {
     padding: 0;
-    background-color: #007bff;
+    background-color: #aee2ff;
     color: #fff;
     border: none;
     border-radius: 4px;
     cursor: pointer;
     font-size: 12px;
-    width: 30%;
+    width: 50%;
+    margin-top: 4px;
 }
 
 .record-add button:hover {
     background-color: #0056b3;
+}
+
+.record-add-input-number,
+.record-add button {
+    height: 36px; /* 높이 조정 */
 }
