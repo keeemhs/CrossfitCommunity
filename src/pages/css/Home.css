@@ -19,20 +19,39 @@
     font-size: 20px;
     text-align: center;
 }
+.sec_2_title > span {
+    font-family: 'KOTRAHOPE';
+    font-size: 30px;
+    color: lightskyblue;
+}
 .sec_2_body {
     display: flex; /* 항목들을 가로로 나란히 표시 */
     flex-wrap: wrap; /* 화면 크기에 따라 줄 바꿈이 일어나도록 설정 */
     justify-content: space-around; /* 각 항목을 가로로 고르게 배치 */
+}
+.sec_2_body > .sec_2_body_specific > a > div {
+    font-family: 'KOTRAHOPE';
+    font-size: 20px;
 }
 .sec_2_body_specific {
     flex: 0 0 calc(25% - 10px);
     margin-bottom: 20px;
     max-width: calc(25% - 10px);
     text-align: center;
+    border: 4px lightblue solid;
+    border-radius: 10%;
+    background-color: white;
 }
+.sec_2_body_specific:hover {
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* 그림자 효과 추가 */
+    transform: scale(1.05); /* 약간 확대 */
+    transition: box-shadow 0.3s ease, transform 0.3s ease; /* 부드러운 애니메이션 효과 추가 */
+}
+
 .equipment {
     width: 200px;
     margin: 10px;
+    border-radius: 10%;
 }
 @media (max-width: 950px) {
     .sec_2_body_specific {
