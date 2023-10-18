@@ -1,4 +1,5 @@
 import React from 'react';
+import './css/Location.scss';
 
 interface ModalProps {
     isOpen: boolean;
@@ -19,7 +20,7 @@ const Modal: React.FC<ModalProps> = ({ isOpen, closeModal, addressInfo }) => {
                 </span>
                 {addressInfo && (
                     <>
-                        <h2>{addressInfo.name}</h2>
+                        <h2 style={{ color: '#ffffff' }}>{addressInfo.name}</h2>
                         <p>{addressInfo.address}</p>
                     </>
                 )}

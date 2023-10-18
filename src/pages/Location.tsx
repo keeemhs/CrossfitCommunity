@@ -22,8 +22,8 @@ const Location = () => {
         script.onload = () => {
             const container = document.getElementById('map');
             const options = {
-                center: new window.kakao.maps.LatLng(37.5665, 126.978),
-                level: 9,
+                center: new window.kakao.maps.LatLng(37.5268, 126.9189),
+                level: 8,
             };
             const map = new window.kakao.maps.Map(container, options);
 

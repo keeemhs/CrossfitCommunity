@@ -35,8 +35,7 @@
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    background: rgba(0, 0, 0, 0.5);
-    // display: none;
+    // background: rgba(0, 0, 0, 0.5);
     z-index: 100;
 }
 
@@ -45,10 +44,14 @@
 }
 
 .modal-content {
+    width: 500px;
+    height: 300px;
     background: #fff;
     padding: 20px;
     border-radius: 8px;
     text-align: center;
+    border: 2px #aee2ff solid;
+    background-color: #abcbff;
 }
 
 .modal-content h2 {
@@ -65,4 +68,8 @@
     color: #fff;
     border: none;
     cursor: pointer;
+}
+
+.name {
+    color: white;
 }
