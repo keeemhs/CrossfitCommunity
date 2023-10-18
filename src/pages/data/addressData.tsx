@@ -10,6 +10,13 @@ import Golden from '../img/Golden.png';
 import UMV from '../img/UMV.png';
 import Flow from '../img/Teamflow.png';
 import Uri from '../img/Uri.png';
+import Meta from '../img/Meta.png';
+import Magical from '../img/Magical.png';
+import Able from '../img/Able.png';
+import Hound from '../img/Hound.png';
+import Guts from '../img/Guts.png';
+import R2G from '../img/R2G.png';
+import Shooting from '../img/Shoting.jpeg';
 
 export interface Address {
     id: number;
@@ -105,36 +112,43 @@ export const addressData: Address[] = [
         id: 15,
         address: '대학길 26',
         name: '메타크로스핏',
+        img: Meta,
     },
     {
         id: 16,
         address: '백제고분로 354',
         name: '크로스핏 매지컬',
+        img: Magical,
     },
     {
         id: 17,
         address: '송파동 32',
         name: '크로스핏 에이블',
+        img: Able,
     },
     {
         id: 18,
         address: '송이로 166',
         name: '크로스핏 하운드',
+        img: Hound,
     },
     {
         id: 19,
         address: '상동 463',
-        name: '크로스핏 가츠',
+        name: '크로스핏 거츠',
+        img: Guts,
     },
     {
         id: 20,
         address: '중동로 256',
         name: 'R2G 크로스핏',
+        img: R2G,
     },
     {
         id: 21,
         address: '경인옛로 42',
         name: '크로스핏 슈팅스타',
+        img: Shooting,
     },
 ];
 
