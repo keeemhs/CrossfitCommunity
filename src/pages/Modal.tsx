@@ -8,6 +8,7 @@ interface ModalProps {
         id: number;
         address: string;
         name: string;
+        img: string;
     } | null;
 }
 
@@ -22,6 +23,7 @@ const Modal: React.FC<ModalProps> = ({ isOpen, closeModal, addressInfo }) => {
                     <>
                         <h2 style={{ color: '#ffffff' }}>{addressInfo.name}</h2>
                         <p>{addressInfo.address}</p>
+                        <img src={addressInfo.img} alt="" />
                     </>
                 )}
             </div>

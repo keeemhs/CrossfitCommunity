@@ -68,6 +68,9 @@ const Location = () => {
                 <div className="modal">
                     <div className="modal-content">
                         <h3>{selectedAddress.name}</h3>
+                        <p>
+                            <img className="box-logo" src={selectedAddress.img} alt="" />
+                        </p>
                         <p>주소: {selectedAddress.address}</p>
                         <button onClick={() => setSelectedAddress(null)}>닫기</button>
                     </div>
