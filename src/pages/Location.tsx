@@ -15,7 +15,7 @@ const Location = () => {
 
     useEffect(() => {
         const script = document.createElement('script');
-        script.src = '//dapi.kakao.com/v2/maps/sdk.js?appkey=c1149756ac35c7aeb16843c749a9c4e7&libraries=services';
+        script.src = '//dapi.kakao.com/v2/maps/sdk.js?appkey=34eb0a3cb341977405568c7f2868c6cc&libraries=services';
         script.async = true;
         document.head.appendChild(script);
 
