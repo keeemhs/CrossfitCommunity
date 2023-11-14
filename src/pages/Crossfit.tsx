@@ -1,5 +1,6 @@
 import './css/Crossfit.scss';
 import AroundCrossfit from './img/AroundCrossfit.png';
+
 import GregGlassman from './img/GregGlassman.png';
 
 const Crossfit = () => {
